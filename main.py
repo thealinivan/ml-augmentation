@@ -1,9 +1,9 @@
 #main script
-import tensorflow as tf
-import keras as ks
-print(2+2)
+from data import getWasteData
+import matplotlib.pyplot as plt
 
-
+data = getWasteData()
+print(plt.imshow(data["cartons"][0]/255))
 
 
 
