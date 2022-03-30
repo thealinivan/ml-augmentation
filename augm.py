@@ -17,8 +17,8 @@ def addNoise(img):
     np.clip(img, 0., 255.)
     return img
 
-#apply noise augmentation / args: numpy array - image
-def noiseAugm(img):
+#apply noise augmentation / args: numpy array - image, int - number of augmentation output images per image
+def noiseAugm(img, duplication):
     #data-augmenting data generator
     datagen = ImageDataGenerator(
             rescale=1./255,
@@ -39,12 +39,12 @@ def noiseAugm(img):
     return images
 
 #get augmented data / args: list - real images data, int - number of augmentation output images per image
-def getAugmData(data, duplication):
+def createNoiseAugmData(data, duplication):
     augmData={}
     for cat in data:
         augmData[cat] = []
         for i in data[cat]:
-            augmImages = noiseAugm(i)
+            augmImages = noiseAugm(i, duplication)
             for ai in augmImages: 
                 augmData[cat].append(ai)
                 print("augmentaion: " + str(len(augmImages)))

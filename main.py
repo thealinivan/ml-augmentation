@@ -2,49 +2,67 @@
 
 import sys
 import matplotlib.pyplot as plt
-from data import getData
-from menu import getMenu
-from augm import getAugmData
+
+from menu import createMenu
+from menu import createAugmNumber
+from menu import createResolution
+from menu import createWelcomeScreen
+
+from data import saveData
+from data import loadData
+from data import displayData
+
+from augm import createNoiseAugmData
+
 
 #init
 CATEGORIES = ("carton", "plastic")
-data = getData(CATEGORIES, [100, 100])
-augData = getAugmData(data, 4)
+FILE = ("img", "noise", "color")
+data = []
+noiseAugData = []
+
+createWelcomeScreen()
+opt = createMenu()
+
+while opt != "0":
     
-#start
-def start():
-    print("")
-    opt = getMenu()
-    print("response:")
-    
+    #load data
     if opt == "1":
-        print("data size: " + str(len(data)))
-        for cat in data:
-            print(cat + " size: " + str(len(data[cat])))
+        res = int(createResolution())
+        data = []
+        data = loadData(FILE[0], CATEGORIES, [res, res])
+        displayData(data)
         
+    #apply noise
     elif opt == "2":
-        print(data["plastic"][0].shape)
+        duplicates = int(createAugmNumber())
+        noiseAugData = createNoiseAugmData(data, duplicates)
+        saveData(FILE[1], noiseAugData)
+        displayData(noiseAugData)
         
+    #load noise-augm data
     elif opt == "3":
-        for cat in data:
-            for i in augData[cat]:
-                print(plt.imshow(i/255))
-                plt.pause(0.001)
-        
+       res = int(createResolution())
+       noiseAugData = []
+       noiseAugData = loadData(FILE[1] , CATEGORIES, [res, res])
+       displayData(data)
+       
+    #display current load (data)
     elif opt == "4":
-        for cat in augData:
-            for i in augData[cat]:
-                print(plt.imshow(i/255))
-                plt.pause(0.001)
-        
+        displayData(data)
+            
+    #display current load (noise-augm data)
+    elif opt == "5":
+        displayData(noiseAugData)
+    
+    #exit
     elif opt == "0":
         sys.exit("Terminated")
-        
+    
+    #wrong input   
     else:
         print("Invalid option !")
-        start()
+    
     plt.pause(0.0001)
-    start()
-           
-#run    
-start()
+    opt = createMenu()
+    
