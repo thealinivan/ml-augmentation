@@ -12,7 +12,7 @@ from data import saveData
 from data import loadData
 from data import displayData
 
-from augm import createNoiseAugmData
+from augm import createAugmData
 
 
 #init
@@ -36,7 +36,7 @@ while opt != "0":
     #apply noise
     elif opt == "2":
         duplicates = int(createAugmNumber())
-        noiseAugData = createNoiseAugmData(data, duplicates)
+        noiseAugData = createAugmData(FILE[1], data, duplicates)
         saveData(FILE[1], noiseAugData)
         displayData(noiseAugData)
         
@@ -45,7 +45,7 @@ while opt != "0":
        res = int(createResolution())
        noiseAugData = []
        noiseAugData = loadData(FILE[1] , CATEGORIES, [res, res])
-       displayData(data)
+       displayData(noiseAugData)
        
     #display current load (data)
     elif opt == "4":
