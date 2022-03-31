@@ -13,13 +13,45 @@ def createWelcomeScreen():
     print("*******************************************************************")
 
 def createOptions():
-    print("[1] Load real images")
-    print("[2] Apply noise to real images & save augmented data")
-    print("[3] Load noise-augm images")
-    print("[4] Display real images (current load)")
-    print("[5] Display noise-augm images (current load)")
+    print("[1] Load Data")
+    print("[2] Augment Data")
+    print("[3] Display Data")
+    print("[4] Apply Machine Learning")
     print("[0] Exit")
-
+    
+def createLoadOptions():
+    print("[1] Load Real images")
+    print("[2] Load Noise augmented images")
+    print("[3] Load Color augmented images")
+    print("[4] Load Mixed augmented images (noise+color")
+    print("[9] Return")
+    
+def createAugmOptions():
+    print("[1] Apply Noise augmentation")
+    print("[2] Apply Color augmentation")
+    print("[3] Apply mixed augmentation")
+    print("[9] Return")
+    
+def createDisplayOptions():
+    print("[1] Display Real images")
+    print("[2] Display Noise augm images")
+    print("[3] Display Color augm images")
+    print("[4] Display Mixed augm images")
+    print("[9] Return")
+    
+def createMLOptions():
+    print("Real, Noise, Color, Mixed (Train or Test)")
+    print("")
+    print("[1] Train Real")
+    print("[2] Test Test Real")
+    print("[3] Train Real + Noise")
+    print("[4] Test Real + Noise")
+    print("[5] Train Real + Color")
+    print("[6] Test Real + Color")
+    print("[7] Train Real + Mixed")
+    print("[8] Test Real + Mixed")
+    print("[9] Return")
+    
 def createMenu():
     print ("==============")
     print ("*** ML Aug ***")
@@ -29,8 +61,19 @@ def createMenu():
     option = input("::")
     return option
 
+def createSubMenu(opt):
+    print ("--------------")
+    print("What kind of action ?")
+    print ("--------------")
+    if opt == "load": createLoadOptions()
+    elif opt == "augm": createAugmOptions()
+    elif opt == "display": createDisplayOptions()
+    elif opt == "ml": createMLOptions()
+    option = input("::")
+    return option
+
 def createAugmNumber():
-    print("How many duplicates would you like to create? 1 to 10 advised for dev")
+    print("How many duplicates would you like to create?")
     option = input("::")
     return option
 

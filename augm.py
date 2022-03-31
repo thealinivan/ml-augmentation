@@ -1,6 +1,7 @@
 #augmentation script
 
 import matplotlib.pyplot as plt
+import cv2
 import random
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
@@ -16,6 +17,9 @@ def addNoise(img):
     np.clip(img, 0., 255.)
     return img
 
+def changeColor(img):
+    return cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
+
 #get data generator / args: string - augmentation type / return data generation - data generation
 def getDataGen(agt):
     if agt == "noise":
@@ -24,11 +28,12 @@ def getDataGen(agt):
             )
     elif agt == "color":
         datagen = ImageDataGenerator(
-                rescale=1./255,
-                rotation_range=40,
+                rescale=1. / 255,
+                rotation_range=20,
                 width_shift_range=0.2,
                 height_shift_range=0.2,
-                zoom_range=0.2,
+                horizontal_flip=True,
+                preprocessing_function = changeColor,
             )
     elif agt == "mixed":
         datagen = ImageDataGenerator(
