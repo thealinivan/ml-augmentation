@@ -31,7 +31,7 @@ def fancy_pca(img):
     eig_vecs = eig_vecs[:, sort_perm]
     m1 = np.column_stack((eig_vecs))
     m2 = np.zeros((3, 1))
-    alpha = np.random.normal(0, round(random.uniform(0.5, 0.8), 2))
+    alpha = np.random.normal(0, round(random.uniform(0.1, 0.9), 2))
     m2[:, 0] = alpha * eig_vals[:]
     add_vect = np.matrix(m1) * np.matrix(m2)
     for idx in range(3):

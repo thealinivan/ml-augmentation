@@ -60,7 +60,10 @@ while opt != "0":
         
             #load mixed-aug data
             elif subOpt == "4":
-                print("#load mixed-aug")
+                res = int(createResolution())
+                mixedAugData = []
+                mixedAugData = loadData(FILE[3] , CATEGORIES, [res, res])
+                displayData(mixedAugData)
                 
             #return to main menu
             elif subOpt == "9":
@@ -96,7 +99,7 @@ while opt != "0":
             elif subOpt == "3":
                 duplicates = int(createAugmNumber())
                 mixedAugData = createAugmData(FILE[3], data, duplicates)
-                saveData(FILE[2], mixedAugData)
+                saveData(FILE[3], mixedAugData)
                 displayData(mixedAugData)
                 
             #return to main menu
