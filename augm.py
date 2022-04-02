@@ -17,8 +17,32 @@ def addNoise(img):
     np.clip(img, 0., 255.)
     return img
 
-def changeColor(img):
-    return cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
+#adapted from: https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py
+# apply color augm with pca / args: numpy array - image / return: numpy array - image (0,1)
+def fancy_pca(img):
+    orig_img = img.astype(float).copy()
+    img = img / 255.0
+    img_rs = img.reshape(-1, 3)
+    img_centered = img_rs - np.mean(img_rs, axis=0)
+    img_cov = np.cov(img_centered, rowvar=False)
+    eig_vals, eig_vecs = np.linalg.eigh(img_cov)
+    sort_perm = eig_vals[::-1].argsort()
+    eig_vals[::-1].sort()
+    eig_vecs = eig_vecs[:, sort_perm]
+    m1 = np.column_stack((eig_vecs))
+    m2 = np.zeros((3, 1))
+    alpha = np.random.normal(0, round(random.uniform(0.5, 0.8), 2))
+    m2[:, 0] = alpha * eig_vals[:]
+    add_vect = np.matrix(m1) * np.matrix(m2)
+    for idx in range(3):
+        orig_img[..., idx] += add_vect[idx]
+    orig_img = np.clip(orig_img, 0.0, 255.0)
+    orig_img = orig_img.astype(np.uint8)
+    return orig_img
+
+# add mixed augm: noise, color, rescale, rotation angle, shift, zoom / args: numpy array - image / return numpy array - img
+def mixedAug(img):
+    return noise(facy_pca(img))
 
 #get data generator / args: string - augmentation type / return data generation - data generation
 def getDataGen(agt):
@@ -28,20 +52,16 @@ def getDataGen(agt):
             )
     elif agt == "color":
         datagen = ImageDataGenerator(
-                rescale=1. / 255,
-                rotation_range=20,
-                width_shift_range=0.2,
-                height_shift_range=0.2,
-                horizontal_flip=True,
-                preprocessing_function = changeColor,
+                brightness_range = [0.3, 1.5],
+                preprocessing_function = fancy_pca,
             )
     elif agt == "mixed":
         datagen = ImageDataGenerator(
                 rescale=1./255,
-                rotation_range=40,
-                width_shift_range=0.2,
-                height_shift_range=0.2,
-                zoom_range=0.2,
+                rotation_range=20,
+                width_shift_range=0.1,
+                height_shift_range=0.1,
+                zoom_range=0.1,
                 preprocessing_function=addNoise,
             )
     return datagen
@@ -63,6 +83,8 @@ def createAugmData(agt, data, duplication):
             for ai in images: 
                 augmData[cat].append(ai)
     return augmData
+
+
 
 
 

@@ -19,12 +19,13 @@ from augm import createAugmData
 #INIT
 #constants
 CATEGORIES = ("carton", "plastic")
-FILE = ("img", "noise", "color")
+FILE = ("img", "noise", "color", "mixed")
 ACTIONS = ("load", "augm", "display", "ml")
 #data lists
 data = []
 noiseAugData = []
 colorAugData = []
+mixedAugData = []
 
 #START
 createWelcomeScreen()
@@ -93,7 +94,10 @@ while opt != "0":
             
             #apply mixed (noise+color)
             elif subOpt == "3":
-                print("#augm mixed")
+                duplicates = int(createAugmNumber())
+                mixedAugData = createAugmData(FILE[3], data, duplicates)
+                saveData(FILE[2], mixedAugData)
+                displayData(mixedAugData)
                 
             #return to main menu
             elif subOpt == "9":
@@ -125,7 +129,7 @@ while opt != "0":
             
             #display current load (mixed (noise+color))
             elif subOpt == "4":
-                print("#load mixed")
+                displayData(mixedAugData)
                 
             #return to main menu
             elif subOpt == "9":
