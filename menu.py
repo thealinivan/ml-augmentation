@@ -40,16 +40,10 @@ def createDisplayOptions():
     print("[9] Return")
     
 def createMLOptions():
-    print("Real, Noise, Color, Mixed (Train or Test)")
+    print("Real, Augm & Hybrids (Train & Test)")
     print("")
-    print("[1] Train Real")
-    print("[2] Test Test Real")
-    print("[3] Train Real + Noise")
-    print("[4] Test Real + Noise")
-    print("[5] Train Real + Color")
-    print("[6] Test Real + Color")
-    print("[7] Train Real + Mixed")
-    print("[8] Test Real + Mixed")
+    print("[1] KNN")
+    print("[2] CNN")
     print("[9] Return")
     
 def createMenu():
@@ -78,7 +72,7 @@ def createAugmNumber():
     return option
 
 def createResolution():
-    print("Please specify resolution? multiples of 10 (40, 120, 270)")
+    print("Please specify resolution?")
     option = input("::")
     return option
 

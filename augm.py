@@ -62,7 +62,7 @@ def getDataGen(agt):
                 width_shift_range=0.1,
                 height_shift_range=0.1,
                 zoom_range=0.1,
-                preprocessing_function=addNoise,
+                preprocessing_function=mixedAug,
             )
     return datagen
 

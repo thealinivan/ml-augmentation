@@ -28,14 +28,19 @@ def displayData(data):
     print("data size: " + str(len(data)))
     for cat in data:
         print(cat + " size: " + str(len(data[cat])))
-    print("image shape: ")
-    #print(data[cat][0].shape)
+
+def displayMLResults(MLType, result):
+    print(MLType + " result:")
+    print(result)
+    
     
 #save augmented data / args: string - augmentation type
-def saveData(file, noiseAugmData):
+def saveData(file, data):
     iterator = 0
-    for cat in noiseAugmData:
+    for cat in data:
         iterator = 0
-        for i in noiseAugmData[cat]:
+        for i in data[cat]:
             cv2.imwrite(file + "/" + cat + '/' + str(iterator) + '.jpg', i)
             iterator += 1
+            
+        

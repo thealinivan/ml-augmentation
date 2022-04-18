@@ -12,20 +12,24 @@ from menu import createSubMenu
 from data import saveData
 from data import loadData
 from data import displayData
+from data import displayMLResults
 
 from augm import createAugmData
-
+from ml import runML
 
 #INIT
 #constants
 CATEGORIES = ("carton", "plastic")
 FILE = ("img", "noise", "color", "mixed")
 ACTIONS = ("load", "augm", "display", "ml")
+ML = ("knn", "cnn")
+      
 #data lists
 data = []
 noiseAugData = []
 colorAugData = []
 mixedAugData = []
+results = [[],[]]
 
 #START
 createWelcomeScreen()
@@ -150,33 +154,18 @@ while opt != "0":
         
         subOpt = createSubMenu(ACTIONS[3])
         while subOpt != "9":
-            #train real
+            #classifiers
             if subOpt == "1":
-                print("#ML train real")
-            #test real
+                print("@@@@@ KNeighrbors")
+                results[0] = []
+                results[0] = runML(ML[0], [data, noiseAugData, colorAugData, mixedAugData])
+                displayMLResults(ML[0], results)
+            #CNN
             elif subOpt == "2":
-                print("#ML test real")
-            
-            #train +noise
-            elif subOpt == "3":
-                print("#ML train +noise")
-            #test +noise
-            elif subOpt == "4":
-                print("#ML test +noise")
-            
-            #train +color
-            elif subOpt == "5":
-                print("#ML train +color")
-            #test +color
-            elif subOpt == "6":
-                print("#ML test +color")
-            
-            #train +mixed
-            elif subOpt == "7":
-                print("#ML train +mixed")
-            #test +mixed
-            elif subOpt == "8":
-                print("#ML test +mixed")
+                print("@@@@@ CNN")
+                results[1] = []
+                results[1] = runML(ML[1], [data, noiseAugData, colorAugData, mixedAugData])
+                displayMLResults(ML[1], results)
                 
             #return to main menu
             elif subOpt == "9":
