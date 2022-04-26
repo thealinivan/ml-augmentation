@@ -25,7 +25,7 @@ def loadData(file, categories, res):
     for cat in categories:
         iterator = 0
         data[cat] = []
-        for i in range(0, 100000):
+        for i in range(0, 1000):
             try:
                 el = toArr(load(file + '/'+ cat +'/'+ str(i) +'.jpg', target_size=(res[0], res[1])))
                 data[cat].append(el)
@@ -34,13 +34,13 @@ def loadData(file, categories, res):
     return data
     
 #display data / args: array - images
-def displayData(data):
+def displayData(dataType, data):
     #for cat in data:
         #for i in data[cat]:
            #print(plt.imshow(i/255))
             #plt.pause(0.001)
     print("")
-    #print(dataType + " data...")
+    print(dataType + " data...")
     print("data size: " + str(len(data)))
     for cat in data:
         print(cat + " size: " + str(len(data[cat])))

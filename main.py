@@ -36,11 +36,10 @@ opt = createMenu()
 while opt != "0":
     #LOAD DATA
     if opt == "1":
-        allData = []
         for i in range(0, len(FILE)):
             d = loadData(FILE[i], CATEGORIES, [res, res])
             allData.append(d)
-            displayData(d)
+            displayData(FILE[i], allData[i])
     
     #AUGMENT DATA
     elif opt == "2": 
@@ -48,12 +47,12 @@ while opt != "0":
             d = createAugmData(FILE[i], allData[i], duplicates)
             allData[i] = d
             saveData(FILE[i], d)
-            displayData(d)
+            displayData(FILE[i], d)
     
     #DISPLAY DATA
     elif opt == "3": 
         for i in range(1, len(FILE)):
-            displayData(allData[i])
+            displayData(FILE[i], allData[i])
     
     #MACHINE LEARNING
     elif opt == "4":
