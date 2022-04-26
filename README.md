@@ -20,6 +20,7 @@ git clone https://labcode.mdx.ac.uk/alinivan/ml-augmentation.git
 cd ml-augmentation
 python main.py
 ```
+When the command line menu will appear start by loading the data.
 
 ## Authors and acknowledgment
 Alin Ivan
@@ -29,7 +30,7 @@ Middlesex University
 ## License
 MIT
 
-## Project status
+## Project info
 University project
 MSc Robotics
 Machine Learning
