@@ -1,12 +1,9 @@
 #augmentation script
 
-import matplotlib.pyplot as plt
-import cv2
 import random
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing import image
-from keras.preprocessing.image import array_to_img, img_to_array
 
 #add noise / args: numpy array - image
 def addNoise(img):
@@ -38,11 +35,11 @@ def fancy_pca(img):
         orig_img[..., idx] += add_vect[idx]
     orig_img = np.clip(orig_img, 0.0, 255.0)
     orig_img = orig_img.astype(np.uint8)
-    return orig_img
+    return img
 
 # add mixed augm: noise, color, rescale, rotation angle, shift, zoom / args: numpy array - image / return numpy array - img
 def mixedAug(img):
-    return noise(facy_pca(img))
+    return fancy_pca(addNoise(img))
 
 #get data generator / args: string - augmentation type / return data generation - data generation
 def getDataGen(agt):

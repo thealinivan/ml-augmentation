@@ -3,6 +3,20 @@ import cv2
 from keras.preprocessing.image import load_img as load 
 from keras.preprocessing.image import img_to_array as toArr
 import matplotlib.pyplot as plt
+import numpy as np
+
+headings = [
+     "real:  ",
+     "noise: ",
+     "color: ",
+     "mixed: ", 
+     "hrn:   ",
+     "hrc:   ",
+     "hrm:   ",
+     "ahrn:  ",
+     "ahrc:  ",
+     "ahrm:  ",
+     ]
 
 #get file data / args: string - file, categories list, resolution list (x and y) / return: object - images
 def loadData(file, categories, res):
@@ -21,18 +35,30 @@ def loadData(file, categories, res):
     
 #display data / args: array - images
 def displayData(data):
-    for cat in data:
-        for i in data[cat]:
-            print(plt.imshow(i/255))
-            plt.pause(0.001)
+    #for cat in data:
+        #for i in data[cat]:
+           #print(plt.imshow(i/255))
+            #plt.pause(0.001)
+    print("")
+    #print(dataType + " data...")
     print("data size: " + str(len(data)))
     for cat in data:
         print(cat + " size: " + str(len(data[cat])))
-
-def displayMLResults(MLType, result):
-    print(MLType + " result:")
-    print(result)
     
+
+def displayMLResults(results):
+    print("")
+    print("Results...")
+    names = headings
+    for name, score in zip(names, results[0]):
+        print(name, score)
+
+def displayPreProcessingData(dataSets):
+    print("")
+    print("Pre-Processing Data...")
+    names = headings
+    for name, ds in zip(names, dataSets):
+        print(name + "data " + str(len(ds.data)) + "   target " + str(len(ds.data)))
     
 #save augmented data / args: string - augmentation type
 def saveData(file, data):
