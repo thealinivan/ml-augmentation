@@ -36,6 +36,7 @@ opt = createMenu()
 while opt != "0":
     #LOAD DATA
     if opt == "1":
+        #res = int(createResolution())
         for i in range(0, len(FILE)):
             d = loadData(FILE[i], CATEGORIES, [res, res])
             allData.append(d)
@@ -63,14 +64,14 @@ while opt != "0":
                 print("")
                 print("Running KNN...")
                 results[0] = []
-                results[0] = runML(ML[0], allData)
+                results[0] = runML(res, ML[0], allData)
                 displayMLResults(results[0])
             #CNN
             elif subOpt == "2":
                 print("")
                 print("Runnin CNN...")
                 results[1] = []
-                results[1] = runML(ML[1], allData)
+                results[1] = runML(res, ML[1], allData)
                 displayMLResults(results[1])
             #return to main menu
             elif subOpt == "9": break  
