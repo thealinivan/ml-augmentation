@@ -71,18 +71,18 @@ Real, Augm & Hybrids (Train & Test)
 [2] CNN
 [9] Return
 ```
-        **Sub-Option 1 - KNN**
-                - Bring the images in **real**, **noise**, **color** and **mixed** datasets in pre-processing
-                - Create 6 new hyrbrid data sets using **real** and **one augmentation** (3 x 50%+50% and 3 x 100% + 100%)
-                - Apply K-nearest Neighbours and display the results in the terminal window
-                - ML duration: 1-5 seconds
+**Sub-Option 1 - KNN**
+        - Bring the images in **real**, **noise**, **color** and **mixed** datasets in pre-processing
+        - Create 6 new hyrbrid data sets using **real** and **one augmentation** (3 x 50%+50% and 3 x 100% + 100%)
+        - Apply K-nearest Neighbours and display the results in the terminal window
+        - ML duration: 1-5 seconds
 
 
-        **Sub-Option 2 - CNN**
-                - Bring the images in **real**, **noise**, **color** and **mixed** datasets in pre-processing
-                - Create 6 new hyrbrid data sets using **real** and **one augmentation** (3 x 50%+50% and 3 x 100% + 100%)
-                - Apply Convolutional Neural Networks with 10 epochs setting and display the results in the terminal window
-                - ML duration: aprox 1-2 min
+**Sub-Option 2 - CNN**
+        - Bring the images in **real**, **noise**, **color** and **mixed** datasets in pre-processing
+        - Create 6 new hyrbrid data sets using **real** and **one augmentation** (3 x 50%+50% and 3 x 100% + 100%)
+        - Apply Convolutional Neural Networks with 10 epochs setting and display the results in the terminal window
+        - ML duration: aprox 1-2 min
 
 Note that **every time the code is runned**, it is required to **load data** (option 1) and **augment data** (option 2) before running the machine learning processes. Altough images are saved to files, this is just for reference. The data that is used for the program logic is kept in variables until program termination.
 
