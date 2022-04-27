@@ -99,6 +99,7 @@ Note that **every time the code is runned**, it is required to **load data** (op
 - **img**, **noise**, **color** and **mixed** represents the folders where the **main images datasets** reside
 - each folder has **2 subfolders**, **carton** and **plastic**
 - each subfolder contains **images named 0.jpg, 1.jpg etc** (samples only for augmentation & more created when running the code)
+- **documentation** folder contains **results reports, reports data source and links to documentation source**
 
 **Python files:**
 - **main.py** handles the **program logic** according to the selected menu options
