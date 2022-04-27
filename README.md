@@ -107,9 +107,9 @@ Note that **every time the code is runned**, it is required to **load data** (op
 - **menu.py** handles the **menus and user input**
 - **ml.py** handles **machine learning** processes
 
-Note each data folder contains 2 subfolders, **carton** and **plastic**. The program requires this structure to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
+Note each data folder **contains 2 subfolders, carton and plastic**. The program **requires this structure** to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
 
-Note the if real images are missing from the img folder (carton and plastic) the program might result in no results or errors. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
+Note the **if real images are missing** from the img folder (carton and plastic) the **program might result in no results or errors**. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
 
 ## Documentation and reports
  - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation
