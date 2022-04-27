@@ -88,29 +88,29 @@ Real, Augm & Hybrids (Train & Test)
 
 ## Files anf Folders description and requirements
 
-Source folder
+**Source folder**
  - sensibile structure of folders, subfolders and python files)
  - img folder contains 2 sub folders, carton and plastic
  - The program is reliant on .jpg image data in these sub folders named, 0.jpg, 1.jpg.. etc)
 
-    Folders:
-        - img, noise, color and mixed represents the folders where the main images datasets reside
+**Folders:**
+- img, noise, color and mixed represents the folders where the main images datasets reside
 
-    Python files:
-        - main.py handles the program logic according to the selected menu options
-        - augm.py handles the augmentation of data
-        - data handles saving, loading, plotting images and displaying information in the terminal
-        - menu.py handles the menus and user input
-        - ml.py handles machine learning processes
+**Python files:**
+- main.py handles the program logic according to the selected menu options
+- augm.py handles the augmentation of data
+- data handles saving, loading, plotting images and displaying information in the terminal
+- menu.py handles the menus and user input
+- ml.py handles machine learning processes
 
 * Note each data folder contains 2 subfolders, **carton** and **plastic**. The program requires this structure to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
 * Note the if real images are missing from the img folder (carton and plastic) the program might result in no results or errors. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
 
 ## Documentation and reports
-Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation.git
-Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
-Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
-Presentation video source: TBA
+ - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation.git
+ - Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
+ - Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
+ - Presentation video source: TBA
 
 ## Project info
 University project
