@@ -1,6 +1,11 @@
 # ml-augmentation
 
 Effect of augmented datasets on different machine learning algorithms in waste recycling material identification 
+- Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation
+- Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
+- Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
+- Real Images datasets: https://labcode.mdx.ac.uk/alinivan/ml-augmentation/-/tree/main/img
+- Presentation video: TBA
 
 # Getting started
 
@@ -111,12 +116,6 @@ Note that **every time the code is runned**, it is required to **load data** (op
 Note each data folder **contains 2 subfolders, carton and plastic**. The program **requires this structure** to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
 
 Note the **if real images are missing** from the img folder (carton and plastic) the **program might result in no results or errors**. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
-
-# Documentation and reports
- - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation
- - Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
- - Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
- - Presentation video source: TBA
 
 ## Project info
 University project
