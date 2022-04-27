@@ -21,7 +21,7 @@ cd ml-augmentation
 python main.py
 ```
 When running a menu will appear in the terminal window as ilustrated bellow. 
-**load data**, **augment data** and then **apply ML**
+You can start by **loading data** then **augment data** and then **apply ML**
 ```
 *******************************************************************
 Welcome!
