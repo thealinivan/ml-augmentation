@@ -4,7 +4,7 @@ Effect of augmented datasets on different machine learning algorithms in waste r
 
 # Getting started
 
-##Pre-requisites
+## Pre-requisites
  - Python 3.9.7
  - TensorFlow 2.8
  - Keras 2.8
