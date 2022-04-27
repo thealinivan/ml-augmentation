@@ -96,16 +96,16 @@ Note that **every time the code is runned**, it is required to **load data** (op
  - Real images will probably be to big for Moodle submission and it is advised to replace the img folder with the one from GitLab repository
 
 **Folders:**
-- img, noise, color and mixed represents the folders where the main images datasets reside
-- each folder has 2 subfolders, **carton** and **plastic**
-- each subfolder contains images named 0.jpg, 1.jpg etc (samples only for augmentation & more created when running the code)
+- **img**, **noise**, **color** and **mixed** represents the folders where the **main images datasets** reside
+- each folder has **2 subfolders**, **carton** and **plastic**
+- each subfolder contains** images named 0.jpg, 1.jpg etc** (samples only for augmentation & more created when running the code)
 
 **Python files:**
-- main.py handles the program logic according to the selected menu options
-- augm.py handles the augmentation of data
-- data handles saving, loading, plotting images and displaying information in the terminal
-- menu.py handles the menus and user input
-- ml.py handles machine learning processes
+- **main.py** handles the **program logic** according to the selected menu options
+- **augm.py** handles the **augmentation** of data
+- **data.py** handles **saving, loading, plotting images and displaying information** in the terminal
+- **menu.py** handles the **menus and user input**
+- **ml.py** handles **machine learning** processes
 
 Note each data folder contains 2 subfolders, **carton** and **plastic**. The program requires this structure to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
 
