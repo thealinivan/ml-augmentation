@@ -90,8 +90,8 @@ Note that **every time the code is runned**, it is required to **load data** (op
 ## Files anf Folders description and requirements
 
 **Source folder**
- - sensibile structure of folders, subfolders and python files
- - The program is reliant on .jpg image data in **img** folder, in its subfolders carton and plastic
+ - **sensibile structure of folders**, subfolders and python files
+ - The program is **reliant on .jpg image data in img** folder, in its subfolders carton and plastic
  - Real images are added on GitLab repository https://labcode.mdx.ac.uk/alinivan/ml-augmentation
  - Real images will probably be to big for Moodle submission and it is advised to replace the img folder with the one from GitLab repository
 
