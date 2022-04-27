@@ -4,7 +4,7 @@ Effect of augmented datasets on different machine learning algorithms in waste r
 
 # Getting started
 
-## Pre-requisites
+### Pre-requisites
  - Python 3.9.7
  - TensorFlow 2.8
  - Keras 2.8
@@ -12,7 +12,7 @@ Effect of augmented datasets on different machine learning algorithms in waste r
  - OpenCV 4.5.5
 
 
-## Run on a local machine
+### Run on a local machine
 
 In a terminal window
 ```
@@ -43,7 +43,7 @@ What would you like to do ?
 [0] Exit
 ```
 
-## Program logic
+# Program logic
 
 **Option 1 Load Data**
  - Load real images from file (64x64 resolution)
@@ -87,7 +87,7 @@ Real, Augm & Hybrids (Train & Test)
 Note that **every time the code is runned**, it is required to **load data** (option 1) and **augment data** (option 2) before running the machine learning processes. Altough images are saved to files, this is just for reference. The data that is used for the program logic is kept in variables until program termination.
 
 
-## Files anf Folders description and requirements
+# Files anf Folders description and requirements
 
 **Source folder**
  - **sensibile structure of folders**, subfolders and python files
@@ -111,7 +111,7 @@ Note each data folder **contains 2 subfolders, carton and plastic**. The program
 
 Note the **if real images are missing** from the img folder (carton and plastic) the **program might result in no results or errors**. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
 
-## Documentation and reports
+# Documentation and reports
  - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation
  - Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
  - Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
