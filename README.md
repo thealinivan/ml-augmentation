@@ -20,7 +20,8 @@ git clone https://labcode.mdx.ac.uk/alinivan/ml-augmentation.git
 cd ml-augmentation
 python main.py
 ```
-When running a menu will appear in the terminal window as ilustrated bellow
+When running a menu will appear in the terminal window as ilustrated bellow. 
+**load data**, **augment data** and then **apply ML**
 ```
 *******************************************************************
 Welcome!
@@ -90,7 +91,9 @@ Note that **every time the code is runned**, it is required to **load data** (op
 
 **Source folder**
  - sensibile structure of folders, subfolders and python files
- - The program is reliant on .jpg image data in **img** folder, in its subfolders (carton and plastic)
+ - The program is reliant on .jpg image data in **img** folder, in its subfolders carton and plastic
+ - Real images are added on GitLab repository https://labcode.mdx.ac.uk/alinivan/ml-augmentation
+ - Real images will probably be to big for Moodle submission and it is advised to replace the img folder with the one from GitLab repository
 
 **Folders:**
 - img, noise, color and mixed represents the folders where the main images datasets reside
@@ -109,7 +112,7 @@ Note each data folder contains 2 subfolders, **carton** and **plastic**. The pro
 Note the if real images are missing from the img folder (carton and plastic) the program might result in no results or errors. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
 
 ## Documentation and reports
- - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation.git
+ - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation
  - Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
  - Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
  - Presentation video source: TBA
