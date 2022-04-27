@@ -83,18 +83,19 @@ Real, Augm & Hybrids (Train & Test)
                 - Apply Convolutional Neural Networks with 10 epochs setting and display the results in the terminal window
                 - ML duration: aprox 1-2 min
 
-* Note that **every time the code is runned**, it is required to **load data** (option 1) and **augment data** (option 2) before running the machine learning processes. Altough images are saved to files, this is just for reference. The data that is used for the program logic is kept in variables until program termination.
+Note that **every time the code is runned**, it is required to **load data** (option 1) and **augment data** (option 2) before running the machine learning processes. Altough images are saved to files, this is just for reference. The data that is used for the program logic is kept in variables until program termination.
 
 
 ## Files anf Folders description and requirements
 
 **Source folder**
- - sensibile structure of folders, subfolders and python files)
- - img folder contains 2 sub folders, carton and plastic
- - The program is reliant on .jpg image data in these sub folders named, 0.jpg, 1.jpg.. etc)
+ - sensibile structure of folders, subfolders and python files
+ - The program is reliant on .jpg image data in **img** folder, in its subfolders (carton and plastic)
 
 **Folders:**
 - img, noise, color and mixed represents the folders where the main images datasets reside
+- each folder has 2 subfolders, **carton** and **plastic**
+- each subfolder contains images named 0.jpg, 1.jpg etc
 
 **Python files:**
 - main.py handles the program logic according to the selected menu options
@@ -103,8 +104,9 @@ Real, Augm & Hybrids (Train & Test)
 - menu.py handles the menus and user input
 - ml.py handles machine learning processes
 
-* Note each data folder contains 2 subfolders, **carton** and **plastic**. The program requires this structure to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
-* Note the if real images are missing from the img folder (carton and plastic) the program might result in no results or errors. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
+Note each data folder contains 2 subfolders, **carton** and **plastic**. The program requires this structure to perform the logic. If these folders with their subfolders are missing please add them in the source folder before running the code.
+
+Note the if real images are missing from the img folder (carton and plastic) the program might result in no results or errors. If not present, please add carton and plastic images in the img folder, inside each representative subfolder (carton and plastic).
 
 ## Documentation and reports
  - Project source: https://labcode.mdx.ac.uk/alinivan/ml-augmentation.git
