@@ -3,7 +3,6 @@ import cv2
 from keras.preprocessing.image import load_img as load 
 from keras.preprocessing.image import img_to_array as toArr
 import matplotlib.pyplot as plt
-import numpy as np
 
 headings = [
      "real:  ",
@@ -35,15 +34,18 @@ def loadData(file, categories, res):
     
 #display data / args: array - images
 def displayData(dataType, data):
-    #for cat in data:
-        #for i in data[cat]:
-           #print(plt.imshow(i/255))
-            #plt.pause(0.001)
     print("")
     print(dataType + " data...")
     print("data size: " + str(len(data)))
     for cat in data:
         print(cat + " size: " + str(len(data[cat])))
+    for cat in data:
+        iterator = 0
+        for i in data[cat]:
+            if iterator > 2: break
+            print(plt.imshow(i/255))
+            iterator += 1
+            plt.pause(0.001)
     
 
 def displayMLResults(results):
@@ -53,6 +55,7 @@ def displayMLResults(results):
     for name, score in zip(names, results[0]):
         print(name, score)
 
+    
 def displayPreProcessingData(dataSets):
     print("")
     print("Pre-Processing Data...")

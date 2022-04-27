@@ -37,22 +37,29 @@ while opt != "0":
     #LOAD DATA
     if opt == "1":
         #res = int(createResolution())
-        for i in range(0, len(FILE)):
-            d = loadData(FILE[i], CATEGORIES, [res, res])
-            allData.append(d)
-            displayData(FILE[i], allData[i])
+        #for i in range(0, len(FILE)):
+           # d = loadData(FILE[i], CATEGORIES, [res, res])
+            #allData.append(d)
+            #displayData(FILE[i], allData[i])
+        d = loadData(FILE[0], CATEGORIES, [res, res])
+        allData.append(d)
+        allData.append([])
+        allData.append([])
+        allData.append([])
+        displayData(FILE[0], allData[0])
+        
     
     #AUGMENT DATA
     elif opt == "2": 
         for i in range(1, len(FILE)):
-            d = createAugmData(FILE[i], allData[i], duplicates)
+            d = createAugmData(FILE[i], allData[0], duplicates)
             allData[i] = d
             saveData(FILE[i], d)
             displayData(FILE[i], d)
     
     #DISPLAY DATA
     elif opt == "3": 
-        for i in range(1, len(FILE)):
+        for i in range(0, len(FILE)):
             displayData(FILE[i], allData[i])
     
     #MACHINE LEARNING
@@ -64,14 +71,14 @@ while opt != "0":
                 print("")
                 print("Running KNN...")
                 results[0] = []
-                results[0] = runML(res, ML[0], allData)
+                results[0] += runML(res, ML[0], allData)
                 displayMLResults(results[0])
             #CNN
             elif subOpt == "2":
                 print("")
                 print("Runnin CNN...")
                 results[1] = []
-                results[1] = runML(res, ML[1], allData)
+                results[1] += runML(res, ML[1], allData)
                 displayMLResults(results[1])
             #return to main menu
             elif subOpt == "9": break  

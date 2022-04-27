@@ -7,7 +7,7 @@ from keras.preprocessing import image
 
 #add noise / args: numpy array - image
 def addNoise(img):
-    VARIABILITY = 50
+    VARIABILITY = 10
     deviation = VARIABILITY*random.random()
     noise = np.random.normal(0, deviation, img.shape)
     img += noise
@@ -28,7 +28,7 @@ def fancy_pca(img):
     eig_vecs = eig_vecs[:, sort_perm]
     m1 = np.column_stack((eig_vecs))
     m2 = np.zeros((3, 1))
-    alpha = np.random.normal(0, round(random.uniform(0.1, 0.9), 2))
+    alpha = np.random.normal(0, round(random.uniform(0.1, 0.2), 2))
     m2[:, 0] = alpha * eig_vals[:]
     add_vect = np.matrix(m1) * np.matrix(m2)
     for idx in range(3):

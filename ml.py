@@ -102,13 +102,6 @@ def CNN(res, data):
         model.add(layers.Flatten())
         model.add(layers.Dense(64, activation='relu'))
         model.add(layers.Dense(2, activation='softmax'))
-        #weights
-        weights1 = 1 * 32 * 3*3 + 32  # conv 0
-        weights2 = 32 * 64 * 3*3 + 64 # conv 1
-        weights3 = 64 * 64 * 3*3 + 64 # conv 2
-        weights4 = 576 * 64 + 64 # dense 0
-        weights5 = 64 * 10 + 10  # dense 1
-        weights_tot = weights1 + weights2 + weights3 + weights4 + weights5
         model.compile(optimizer=keras.optimizers.Adam(learning_rate=0.01), loss='categorical_crossentropy', metrics=['accuracy'])
         #train
         model.fit(train_images, train_labels, epochs=1, batch_size=128)
