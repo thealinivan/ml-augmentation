@@ -89,8 +89,10 @@ Real, Augm & Hybrids (Train & Test)
 ## Files anf Folders description and requirements
 
 Source folder
-(sensibile structure of folders, subfolders and python files)
-(img folder contains 2 sub folders, carton and plastic.The program is reliant on .jpg image data in these sub folders named, 0.jpg, 1.jpg.. etc)
+ - sensibile structure of folders, subfolders and python files)
+ - img folder contains 2 sub folders, carton and plastic
+ - The program is reliant on .jpg image data in these sub folders named, 0.jpg, 1.jpg.. etc)
+
     Folders:
         - img, noise, color and mixed represents the folders where the main images datasets reside
 
