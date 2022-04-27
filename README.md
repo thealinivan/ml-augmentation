@@ -5,7 +5,7 @@ Effect of augmented datasets on different machine learning algorithms in waste r
 - Google slides result reports: https://docs.google.com/presentation/d/19AGLujYc8hrgYahQOwt9jbjkNEJsOoPbkzUiEApk0hg/edit#slide=id.p
 - Google sheets reports data source: https://docs.google.com/spreadsheets/d/1DualAXURBKLnr2EedGRYQEo90lhaAXqe3PjRa-_aBI0/edit#gid=0
 - Real Images datasets: https://labcode.mdx.ac.uk/alinivan/ml-augmentation/-/tree/main/img
-- Presentation video: TBA
+- Presentation video: https://youtu.be/17bJ2y6eOUI
 
 # Getting started
 
