@@ -50,7 +50,7 @@ What would you like to do ?
 
 
 **Option 2 - Augmunted Data**
- - Create new augmented images using the real images (64x64 resolution)
+ - Create new augmented images using the real images on a 1:1 ratio (64x64 resolution) 
  - Separate datasets are create with noise, color and both noise and color augmentation
  - Files are saved in arrays and in files
  - Some sample images will be plotted for reference
@@ -95,7 +95,7 @@ Note that **every time the code is runned**, it is required to **load data** (op
 **Folders:**
 - img, noise, color and mixed represents the folders where the main images datasets reside
 - each folder has 2 subfolders, **carton** and **plastic**
-- each subfolder contains images named 0.jpg, 1.jpg etc
+- each subfolder contains images named 0.jpg, 1.jpg etc (samples only for augmentation & more created when running the code)
 
 **Python files:**
 - main.py handles the program logic according to the selected menu options
