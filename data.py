@@ -43,7 +43,7 @@ def displayData(dataType, data):
         iterator = 0
         for i in data[cat]:
             if iterator > 2: break
-            print(plt.imshow(i/255))
+            print(plt.imshow(cv2.cvtColor(i, cv2.COLOR_BGR2RGB)))
             iterator += 1
             plt.pause(0.001)
     
@@ -69,7 +69,7 @@ def saveData(file, data):
     for cat in data:
         iterator = 0
         for i in data[cat]:
-            cv2.imwrite(file + "/" + cat + '/' + str(iterator) + '.jpg', i)
+            cv2.imwrite(file + "/" + cat + '/' + str(iterator) + '.jpg', cv2.cvtColor(i, cv2.COLOR_BGR2RGB))
             iterator += 1
             
         
